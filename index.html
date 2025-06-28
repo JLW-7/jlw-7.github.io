@@ -198,12 +198,36 @@
         cursor: pointer;
     }
 
+    @media (max-width: 768px) {
+      .banner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .profile-pic {
+        width: 70vmin;
+        height: 70vmin;
+      }
+
+      .intro-text {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+
+      p {
+        font-size: 1.5rem;
+      }
+    }
+
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="/">Home</a><a href="#about">About</a><a href="#interests">Interests</a><a href="#leadership">Leadership</a><a href="#a&a">Awards & Achievements</a><a href="#contact">Contact</a>
+      <a href="/">Home</a><a href="#about">About</a><a href="#interests">Interests</a><a href="#leadership">Leadership</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
     </nav>
   </header>
   <section class="banner">
@@ -291,7 +315,7 @@
     </ul>
   </section>
 
-  <section id="a&a">
+  <section id="achievements">
     <h2>Awards & Achievements</h2>
     <h3>Curricular</h3>
     <ul>
