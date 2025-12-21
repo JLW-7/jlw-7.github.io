@@ -2,334 +2,601 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>July Wu | Portfolio Site</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+    
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+    
     * {
-      box-sizing:border-box;
-      scroll-behavior: smooth;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: rgb(210, 233, 255);
-      color:#007BFF;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+ 
+    @keyframes float {
+      0%, 100% { transform: translateY(0) ; }
+      50% { transform: translateY(-20px) ; }
+    }
+    
+    body {
+      font-family: 'Montserrat', 'Open Sans', sans-serif;
+      background-color: #0B0010;
+      color: #C5C6C7;
+      line-height: 1.4;
       overflow-x: hidden;
     }
+    
     body a {
-      text-underline-offset: 4px;
-      color: inherit;
+      text-underline-offset: 7px;
+      text-decoration: underline;
+      color: #66FCF1;
       font-weight: 600;
       transition: all 0.2s ease;
     }
+    
     body a:hover {
-      color:#005bbc
+      color: #53c1bc;
     }
+    
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 1000;
-      align-items: center; 
-      background-color: #93c2ffe7;
-      color: white;
-      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #0b001058;
+      padding: 20px;
       transition: all 0.3s ease;
-      scroll-behavior: smooth;
+      backdrop-filter: blur(5px);
+      /* border-bottom: 1px solid #1F2833; */
     }
-
-    header a{
-      text-decoration: none; 
-      color: inherit;
+    
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
+    
+    nav a {
+      text-decoration: none;
+      color: #abfff9;
       font-weight: 500;
       font-size: 18px;
-      color: inherit;
-      text-decoration: none;
       padding: 15px 30px;
-      transition: all 0.1s ease;
-    }
-
-    nav {
-      display: flex; 
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    nav a:hover {
-      background-color: rgba(255, 255, 255, 0.097);
+      transition: all 0.3s ease;
       border-radius: 40px;
-      color: rgb(238, 238, 238)
     }
-
+    
+    nav a:hover {
+      background-color: rgba(124, 255, 253, 0.153);
+      color: #00ffee;
+      transform: translateY(-2px);
+    }
+    
     .banner {
-      height: 92vh;
-      background: #007BFF;
-      color: white;
+      height: 90vh;
+      background: #1F2833;
+      color: #C5C6C7;
       display: flex;
       align-items: center;
       gap: 8rem;
       justify-content: center;
-      padding: 2rem;
-      box-sizing: border-box;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      margin-top: 92px;
     }
+    
     .profile-pic {
       width: 50vmin;
       height: 50vmin;
       border-radius: 50%;
       object-fit: cover;
-      border: 5px solid white;
-      animation: fadeInLeft 1s ease;
+      border: 5px solid #66FCF1;
       animation: breathe 2.5s infinite;
+      box-shadow: 0 0 50px rgba(102, 252, 241, 0.3);
+      transition: transform 0.5s ease;
+      position: relative;
+      z-index: 2;
     }
+    
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+    
     .intro-text {
       max-width: 40%;
-      animation: fadeInRight 1s ease;
+      position: relative;
+      z-index: 2;
     }
+    
     .intro-text h1 {
-      font-size: 5rem;
-      margin:0;
+      font-size: 4.5rem;
+      margin: 0;
+      line-height: 1.3;
+      color: #66FCF1;
     }
+    
     .intro-text p {
-      font-size: 2rem;
+      font-size: 1.8rem;
       margin: 0.5rem 0;
       margin-top: 3rem;
+      line-height: 1.3;
+      align-items: center;
+      color: #C5C6C7;
+      /* min-height: 2.5rem; Prevents layout shift */
     }
+    
     .typing {
-      border-right: 2px solid white;
+      border-right: 2px solid #66FCF1;
       white-space: nowrap;
       display: inline-block;
       vertical-align: middle;
-      line-height: 2rem;
-      padding-bottom: 2px;
+      line-height: 1.3;
+      color: #66FCF1;
+      font-weight: bold;
+      padding-right: 5px;
+      padding-bottom: 5px;
+      min-height: 2.8rem;
+      min-width: 1px;
     }
+    
     section {
-      padding: 2rem 10%;
+      padding: 6rem 12%;
+      width: 100%;
+      position: relative;
     }
-    h2 {
-      font-size: 2rem;
-      border-bottom: 1px solid #007BFF;
-      padding-bottom: 0.5rem;
-      margin-bottom: 2rem;
+    
+    #about {
+      background-color: #0B0010;
     }
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
+
+    #about p {
+      font-size: 1.1rem;
+      text-indent: 2em;
     }
-    h4 {
-      margin: 0;
-      margin-bottom: 1rem;
-      font-size:1.1rem;
+    
+    #interests {
+      background-color: #1F2833;
     }
-    ul {
-      padding: 0;
-      margin: 0;
-      margin-left: 30px;
+    
+    #leadership {
+      background-color: #0B0010;
     }
-    li {
-      padding: 0.5rem 0;
+    
+    #achievements {
+      background-color: #1F2833;
     }
-    footer {
-      padding: 2rem;
-      background: #004a9a;
-      color:white;
-      text-align: center;
-      font-size: 0.9rem;
+    
+    #contact {
+      background-color: #0B0010;
+    }
+    
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
-
+    
+    .card {
+      background: rgba(31, 40, 51, 0.8);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid #45A29E;
+    }
+    
+    .card:hover {
+      box-shadow: 0 10px 25px rgba(102, 252, 242, 0.013);
+      border-color: #66FCF1;
+      background-color:rgba(49, 63, 79, 0.8);
+    }
+    
+    .card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #66FCF1;
+    }
+    
+    .card h4 {
+      margin: 0;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      color: #C5C6C7;
+    }
+    
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+      color: #C5C6C7;
+    }
+    
+    .card ul {
+      padding: 0;
+      margin: 0;
+      margin-left: 0;
+      list-style-type: none;
+    }
+    
+    .card li {
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 20px;
+      color: #C5C6C7;
+    }
+    
+    .card li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #66FCF1;
+      font-weight: bold;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      /* border-bottom: 1px solid #45A29E; */
+      padding-bottom: 0.8rem;
+      margin-bottom: 2rem;
+      line-height: 1.3;
+      text-align: center;
+      position: relative;
+      color: #66FCF1;
+    }
+    
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, #66FCF1, transparent);
+      animation: linePulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes linePulse {
+      0%, 100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+    
+    footer {
+      padding: 2.5rem;
+      background: #0B0010;
+      color: #C5C6C7;
+      text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      position: relative;
+      border-top: 1px solid #1F2833;
+    }
+    
     @keyframes breathe {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.08); }
-        100% { transform: scale(1); }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
     }
-    @keyframes typing {
-      0%, 20% { width: 0; }
-      25%, 40% { width: 80%; }
-      100% { width: 0; }
-    }
-    @keyframes fadeInLeft {
-      from { opacity: 0; transform: translateX(-50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
-    @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(50px); }
-      to { opacity: 1; transform: translateX(0); }
-    }
+    
     .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        margin-bottom: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
+    
     .contact-form label {
-        font-weight: 700;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #66FCF1;
     }
-
+    
     .contact-form input,
     .contact-form textarea {
-        padding: 0.8rem;
-        font-size: 1rem;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-family: inherit;
+      padding: 1rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      border: 1px solid #45A29E;
+      font-family: inherit;
+      background: rgba(31, 40, 51, 0.8);
+      color: #C5C6C7;
+      transition: all 0.3s ease;
     }
-
+    
     .contact-form input:focus,
     .contact-form textarea:focus {
-        border-color: #00429e;
-        outline: none;
+      border-color: #66FCF1;
+      outline: none;
+      transform: scale(1.02);
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.3);
     }
-
+    
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(197, 198, 199, 0.7);
+    }
+    
     .contact-form button {
-        background-color: #0042b4;
-        color: white;
-        border: none;
-        padding: 0.8rem;
-        font-size: 1rem;
-        border-radius: 20px;
-        transition: background-color 0.2s ease;
-        margin-top: 2rem;
-        font-family: inherit;
+      background: linear-gradient(45deg, #45A29E, #66FCF1);
+      color: #0B0010;
+      border: none;
+      padding: 1.2rem;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+      font-family: inherit;
+      cursor: pointer;
+      font-weight: bold;
     }
-
+    
     .contact-form button:hover {
-        background-color:  #00338c;
-        cursor: pointer;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(102, 252, 241, 0.4);
     }
-
+    
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: bounce 2s infinite;
+      color: #66FCF1;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
     @media (max-width: 768px) {
       .banner {
         flex-direction: column;
         text-align: center;
+        gap: 4rem;
+        padding: 2rem;
       }
-
+      
       .profile-pic {
         width: 70vmin;
         height: 70vmin;
       }
-
+      
       .intro-text {
         max-width: 100%;
       }
-
-      h1 {
-        font-size: 3rem;
+      
+      .intro-text h1 {
+        font-size: 3.2rem;
       }
-
-      p {
+      
+      .intro-text p {
         font-size: 1.5rem;
+        min-height: 2.2rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .card-container {
+        grid-template-columns: 1fr;
+      }
+      
+      nav {
+        gap: 1rem;
+      }
+      
+      nav a {
+        font-size: 16px;
+        padding: 12px 20px;
+      }
+      
+      section {
+        padding: 4rem 8%;
       }
     }
-
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <a href="/">Home</a><a href="#about">About</a><a href="#interests">Interests</a><a href="#leadership">Leadership</a><a href="#achievements">Achievements</a><a href="#contact">Contact</a>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#leadership">Leadership</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
-  <section class="banner">
-    <img class="profile-pic" src="me.png" alt="July's profile" />
+  
+  <section class="banner" id="home">
+    <img class="profile-pic" src="me.jpeg" alt="July's profile picture" />
     <div class="intro-text">
       <h1>Hi I'm July!</h1>
       <p>I am a <span class="typing" id="role"></span></p>
     </div>
+    <div class="scroll-indicator">↓ Scroll Down ↓</div>
   </section>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>
-      I'm an <b>8th grade student</b> studying at <b>YK Pao Middle School</b>, in <b>Shanghai, China</b>. Fun Fact: I'm a <b>girl</b> who loves short hair and dislikes gender stereotypes!
-    </p>
+      <p>
+          I’m an <b>8th grader</b> at <b>YK Pao Middle School</b> in Shanghai. My interests range from <b>competitive swimming</b> to <b>programming</b> to playing <b>violin</b> and <b>volleyball</b>. I enjoy learning new things, which is why I’ve taught myself much of my coding, mathematical modeling, astronomy and even investment (I'm really getting the hang of it, I've earned around $1000 already!).
+          <br>
+          <br>
+        </p>
+        <p>
+          <b>Sports</b> have shaped a big part of who I am. I’ve dealt with injuries from a broken elbow, to a torn ankle ligament, to much more, but I’ve always <b>worked my way back</b> and <b>kept improving</b>, whether in the pool or on the court. Recovering from setbacks as well as balancing between training and school has made me both <b>disciplined</b> and <b>resilient</b>.
+          <br>
+          <br>
+        </p>
+        <p>
+          I'm also <b>passionate</b> about my community and really enjoy <b>making an impact</b>. I've taken on many <b>leadership roles</b> in school, <b>founded clubs</b> that encourage learning, and <b>given motivational speeches</b> in front of the whole school about my experiences. I love using tech to assist people as well. Some of the programming projects I’ve created are used by classmates and teachers, which motivates me to <b>keep building things that help others.</b>
+          <br>
+          <br>
+        </p>
+        <p>
+          And for the record, I am a <b>girl</b> who just happens to like short hair and the freedom of not fitting into anyone’s stereotype.
+        </p>
   </section>
 
   <section id="interests">
     <h2>Interests & Activities</h2>
-    <h3>🏊 Competitive Swimming</h3>
-    <h4>Personal Bests:</h4>
-    <ul>
-      <li>50 meter free (SCM): <b>27.84</b> | Time Standard Reached: <b>4A</b> for 11 - 12 girls, <b>3A</b> for 13 - 14 girls</li>
-      <li>100 meter free (SCM): <b>59.50</b> | Time Standard Reached: <b>4A</b> for 11 - 12 girls, <b>3A</b> for 13 - 14 girls</li>
-      <li>200 meter IM (SCM): <b>2.31.48</b> | Time Standard Reached: <b>4A</b> for 11 - 12 girls, <b>3A</b> for 13 - 14 girls</li>
-      <li>View more of my PBs and specialties on <a href="https://www.swimcloud.com/swimmer/1340903/">Swimcloud</a></li>
-    </ul>
-    <p>Note: The above time standards are according to the <a href="https://websitedevsa.blob.core.windows.net/sitefinity/docs/default-source/timesdocuments/time-standards/2025/2028-motivational-standards-age-group.pdf" target="_blank">2024 - 2028 USA Swimming Motivational Time Standards</a>.</p><br>
-    <h4>Experience</h4>
-    <ul>
-      <li>Member of school's <b>Varsity Swim team</b>.</li>
-      <li>Member of Changning district's professional swim team.</li>
-      <li>Competed and won countless medals for my school and district.</li>
-    </ul>
-    <h3 style="margin-top: 2.5rem;">💻 Computer Science & Tech</h3>
-    <h4>Languages & Tools I Use:</h4>
-    <ul>
-      <li>Python, C++, HTML, CSS, Javascript, Swift, Next.js, Node.js</li>
-    </ul><br>
-    <h4>Projects:</h4>
-    <ul>
-      <li>
-        <a href="https://github.com/JLW-7/wally-c" target="_blank">Wally</a>: A portable, AI-powered voice assistant that boosts productivity with reminders and assists in daily tasks. I am planning to provide it to more people in need around me and possibly commercialize/mass produce it in the future!
-      </li>
-      <li>
-        <a href="https://numeracalc.com/" target="_blank">Numera</a>: A versatile calculator web app with multiple calculations and conversions. It has helped 500+ users from 29 different countries!
-      </li>
-      <li><a href="/" target="_blank">This Website</a>: My personal portfolio website, and my first ever coding project that sparked my interest in the field of computer technology.</li>
-      <li>View more of my projects on <a href="https://github.com/JLW-7">GitHub</a></li>
-    </ul>
-    <h3>🏐 Volleyball</h3>
-    <h4>Experience:</h4>
-    <ul>
-        <li>Member of school <b>Varsity Girls Volleyball team</b>.</li>
-        <li>Played mostly as the setter and middle-blocker.</li>
-        <li>Competed in various inter-school tournaments and helped the team reach 1st place in Shanghai's U15 division.</li>
-    </ul>
-    <h3>🎻 Violin & Music</h3>
-    <h4>Experience:</h4>
-    <ul>
-        <li>Member of school <b>Orchestra</b> and <b>Chamber Music Reportoire</b>, played mostly in the First Violin.</li>
-        <li>Performed during important school events such as Founder's day, Winter Festival, as well as Summer/Winter Concerts.</li>
-        <li>Earned <b>Grade 7</b> in the Violin category of ABRSM Performance Grades, as well as <b>Grade 5</b> in ABRSM Music Theory.</li>
-    </ul>
+    <div class="card-container">
+      <div class="card">
+        <h3>Competitive Swimming</h3>
+        <h4>Personal Best Highlights:</h4>
+        <ul>
+          <li>50 meter free (LCM): <b>27.91</b> | Time Standard: <b>4A</b> (13 girls)</li>
+          <li>100 meter free (LCM): <b>1.00.51</b> | Time Standard: <b>4A</b> (13 girls)</li>
+          <li>50 meter fly (LCM): <b>29.78</b> | Time Standard: <b>4A</b> (13 girls)</li>
+          <li>View more of my best times on <a href="https://www.swimcloud.com/swimmer/1340903/">Swimcloud</a></li>
+        </ul>
+        <p><small>Time standards according to <a href="https://websitedevsa.blob.core.windows.net/sitefinity/docs/default-source/timesdocuments/time-standards/2025/2028-motivational-standards-single-age.pdf" target="_blank">USA Swimming Motivational Time Standards (Single Age)</a>.</small></p>
+        
+        <h4>Experience</h4>
+        <ul>
+          <li>Member of school's <b>varsity swim team</b> since 6th grade</li>
+          <li>Member of Changning district's professional swim team</li>
+          <li>Competed and won countless medals for my school and district</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Computer Science & Tech</h3>
+        <h4>Languages & Tools:</h4>
+        <ul>
+          <li>Python, C++, HTML, CSS, Javascript, Swift, Next.js, Node.js</li>
+        </ul>
+        <h4>Experience: </h4>
+        <ul>
+            <li>Self-learned programming by joining forums, following online courses and building projects</li>
+            <li>Participated and won in programming/tech/innovation contests (e.g. USACO, Nuremberg Science Competition)</li>
+        </ul>
+        
+        <h4>Projects Highlights:</h4>
+        <ul>
+          <li>
+            <a href="https://github.com/JLW-7/wally-c" target="_blank">Wally</a>: Penguin-shaped AI voice assistant for productivity and reminders
+          </li>
+          <li>
+            <a href="https://numeracalc.com/" target="_blank">Numera</a>: Calculator web app having helped 500+ users from 40+ countries
+          </li>
+          <li><a href="/" target="_blank">This Website</a>: You're on it right now!</li>
+          <li>View more of my projects on <a href="https://github.com/JLW-7">GitHub</a></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Volleyball</h3>
+        <h4>Experience:</h4>
+        <ul>
+          <li>Member of school <b>varsity girls volleyball team</b> since 6th grade</li>
+          <li>Skilled in all positions, especially as the setter and middle-blocker</li>
+          <li>Helped foster a warm and supportive team environment together with my teammates</li>
+          <li>Competed in various inter-school tournaments and helped the team reach 1st place in Shanghai's U15 division</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Violin & Music</h3>
+        <h4>Experience:</h4>
+        <ul>
+          <li>Member of school <b>Orchestra</b> and <b>Chamber Music Repertoire</b></li>
+          <li>First Violin performer at school events like Founder's Day, Winter/Summer Concert, and more</li>
+          <li>Participant in the Yale Charity Concert, where we performed for disabled individuals</li>
+          <li>ABRSM Grade 7 Violin, Grade 5 Music Theory</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="leadership">
     <h2>Leadership</h2>
-    <h4>💼 Founder of Web Developers Club at school:</h4>
-    <ul>
-      <li>Founded and lead the Web Developers Club at my school, where 30+ students learn web development with fun club challenges and snacks! Each of them managed to build their own websites like this one at the end!</li>
-      <li>Inspired more students at my school, especially girls, to dive into the field of computer science and technology.</li>
-    </ul><br>
-    <!-- <h4>🏊 Captain of school's Competitive Sports Swim team</h4>
-    <ul>
-      <li>Coordinated and led the team during training sessions and swim meets.</li>
-      <li>Fostered an encouraging and supportive community within the team (especially during relays!).</li>
-    </ul><br> -->
-    <h4>🌱 2024 House Captain of Spring House</h4>
-    <p>Our school is divided into 4 houses - Spring, Summer, Autumn, Winter - with two House Captains for each house.</p>
-    <ul>
-      <li>Organized house-related events such as Sports Day and other inter-house competitions.</li>
-      <li>Created school's first ever House Magazine to showcase house-related information and events.</li>
-      <li>Mentored younger students during lunchtime activities (e.g. taught Y2 students how to make origami)</li>
-    </ul>
+    <div class="card-container">
+      <div class="card">
+        <h3>Hacker's Hub Club Founder</h3>
+        <ul>
+          <li>Founded and lead club in school, helping 30+ students learn web development during weekly club meetings</li>
+          <li>Self-designed interactive workshops, activities and powerpoints, which my members loved!</li>
+          <li>Inspired more students, especially girls, to explore new fields of technology, like computer science</li>
+          <li>All students managed to build their own websites at the end of the program!</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>2025 House Prefect</h3>
+        <p>Our school divides students into 4 houses (Spring, Summer, Autumn, Winter) with two House Prefects each.</p>
+        <ul>
+          <li>Hosted house events like Sports Day, House Assemblies and inter-house competitions</li>
+          <li>Designed house logos and our school's House Point animation using my coding skills</li>
+          <li>Established and organized school charity events (such as fundraisers to support children in rural areas)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Paomelos Project Founder</h3>
+        <ul>
+          <li>Founded and lead the Paomelos Project, organizing our school's first ever Wechat Official Account, called The Paomelos</li>
+          <li>Published articles and short-form videos every week around school events and student life</li>
+          <li>Held weekly meetings and made sure members were organized and on task</li>
+          <li>Helped parents, students, and alumni gain a timely and comprehensive understanding of campus life</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Mathematical Modeling Team Leader</h3>
+        <ul>
+          <li>Leader of school Math Modeling club</li>
+          <li>Together with teammates, developed models that solve real-world problems using math and code</li>
+          <li>Fostered an inclusive and supportive club/team environment</li>
+          <li>Attended and won in many modeling competitions</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="achievements">
     <h2>Awards & Achievements</h2>
-    <h3>Curricular</h3>
-    <ul>
-      <li><b>2023 - 2024 School Year Founder's Award</b>: Top 10% in whole year level based on academic excellence</li>
-      <li><b>2023 - 2024 School Year Information Computer Technology Award</b>: Recognized for highest academic excellence in the subject of computer science.</li>
-      <li><b>2024 - 2025 School Year Founder's Award</b>: Top 10% in whole year level based on academic excellence</li>
-      <li><b>2024 - 2025 School Year Math Award</b>: Recognized for highest academic excellence in the subject of math.</li>
-    </ul>
-    <h3>Extra-Curricular</h3>
-    <ul>
-      <li><b>2022 Math Kangaroo Top Gold Award</b>: A score in the Top 5% of all participants in China</li>
-      <li><b>2025 AMC8 Honor Roll</b>: A score of 19 or above in the 2025 AMC8</li>
-      <li><b>USACO Gold Division</b></li>
-    </ul>
+    <div class="card-container">
+      <div class="card">
+        <h3>Curricular</h3>
+        <ul>
+          <li><b>2023-2024 & 2024-2025 School Year Founder's Award</b>: Top 10% academically in year level</li>
+          <li><b>2023-2024 School Year ICT Award</b>: Student with highest academic excellence in computer science</li>
+          <li><b>2024-2025 Math Award</b>: Student with highest academic excellence in mathematics</li>
+        </ul>
+      </div>
+      
+      <div class="card">
+        <h3>Extra-Curricular</h3>
+        <ul>
+          <li><b>2022 <a href="https://mathkangaroo.org/mks/" target="_blank">Math Kangaroo Competition</a> Top Gold Award</b>: Top 5% in all participants of China</li>
+          <li><b>2025 <a href="https://maa.org/student-programs/amc/" target="_blank">AMC8</a> Honor Roll</b>: An AMC8 Score of 19+ out of 25</li>
+          <li><b>USACO Gold Division: </b>Competing in gold division of the <a href="https://usaco.org" target="_blank">USACO programming contest</a></li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="contact">
@@ -354,6 +621,7 @@
   </footer>
 
   <script>
+    // Typing animation
     const roles = ["13-year-old student", "swimming athlete", "tech enthusiast", "passionate leader", "skilled violinist"];
     let index = 0;
     const roleElement = document.getElementById('role');
@@ -398,4 +666,30 @@
     }
 
     cycleRoles();
+
+    // Scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.card').forEach(card => {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(50px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease, border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease';
+      observer.observe(card);
+    });
+   
   </script>
+
+</body>
+</html>
