@@ -1,25 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>July Wu | Full Stack Dev</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<style>
-    body {
-      height: 100vh;                
-      display: flex;                
-      justify-content: center;      
-      align-items: center;          
-      margin: 0;    
-      text-align: center;                
-    }
-    
-    p {
-        font-size: medium;
-    }
-</style>
+
 <body>
-    <p>sorry, this site is currently under maintenance. but don't worry, it's gonna be back soon! ;)</p>
+    <!-- Header -->
+    <header>
+      <div class="logo-container">
+        <div class="logo-special"><a href="/">JULYW</a></div>
+        <div class="logo"><a href="/">.com</a></div>
+      </div>
+      <nav>
+        <a href="/">Home</a><a href="/contact/">Contact</a><a href="/projects/">Projects</a><a href="https://github.com/JLW-7" target="_blank">Github</a><a href="mailto:july.777.wu@gmail.com" target="_blank">Email</a>
+      </nav>
+    </header>
+
+    <!-- Banner -->
+    <div class="banner">
+      <div class="banner-content">
+        <div class="banner-heading">
+          <h2>Hi there, </h2>
+          <h1>I'm July Wu</h1>
+        </div>
+        <div class="banner-text">
+          <p>I'm a passionate student
+          <span class="banner-text-highlight">full-stack developer</span>
+          with a love for coding, astronomy, and sports.</p>
+        </div>
+        <hr>
+        <div class="contact-content">
+          <div class="contact-content-1">
+            <a href="mailto:july.777.wu@gmail.com" target="_blank">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <a href="https://github.com/JLW-7" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/july-wu-85b3052a1/" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://www.youtube.com/@julywu7" target="_blank">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61572697954233" target="_blank">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://stackoverflow.com/users/29459174/july" target="_blank">
+              <i class="fa-brands fa-stack-overflow"></i>
+            </a>
+          </div>
+          <a href="https://hackclub.com/" target="_blank" class="org-button">
+            <img src="assets/images/hackclub-logo.png" alt="hackclub logo">
+            Member of Hack Club
+          </a>
+        </div>
+      </div>
+      <img src="assets/images/computer-removebg-preview.png" alt="cute computer cartoon">
+    </div>
+
+    <!-- About Me -->
+    <div class="about-me" id="about">
+      <h3>About Me</h3>
+      <div class="who-am-i">
+        <div class="about-me-image"><img src="assets/images/julywu.jpg" alt="July Wu" class="slide-in-image"></div>
+        <div class="who-am-i-content">
+          <h4>Here's Me in 10 seconds...</h4>
+          <p>I’m July, a 12-yo full-stack developer based in Shanghai, China. I craft meaningful websites/apps/hardware that genuinely make a postive impact on others (or perhaps the world). However, my goal is to master AI and become an AI/ML engineer when I'm older!</p>
+        </div>
+      </div>
+      <p class="about-me-note">Want me to make something for you? Looking to collaborate or simply send me a message? Contact me <a href="/contact/">on my contact page</a>!</p>
+    </div>
+
+    <div class="skills" id="skills">
+      <h3>Tech Stack</h3>
+      <div class="skills-content">
+
+        <div class="programming-langs">
+          <p>Programming languages</p>
+          <ul>
+            <li>Python</li>
+            <li>*C++</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+            <li>*Swift</li>
+          </ul>
+        </div>
+
+        <div class="front-end">
+          <p>Front-End Development</p>
+          <ul>
+            <li>UI/UX Design</li>
+            <li>CSS Animations & Transitions</li>
+            <li>Javascript DOM Manipulation</li>
+            <li>Responsive Web Design</li>
+          </ul>
+        </div>
+
+        <div class="back-end">
+          <p>Back-End Development</p>
+          <ul>
+            <li>RESTful APIs</li>
+            <li>*SQL</li>
+            <li>Node.js</li>
+            <li>*NoSQL (MongoDB)</li>
+            <li>*AI/ML</li>
+          </ul>
+        </div>
+
+        <div class="frames-libs">
+          <p>Frameworks & Libraries</p>
+          <ul>
+            <li>*Django</li>
+            <li>Flask</li>
+            <li>React</li>
+            <li>Next.js</li>
+            <li>Tailwind CSS</li>
+          </ul>
+        </div>
+
+      </div>
+      <p>* = stuff im still learning</p>
+    </div>
+
+    <div class="projects" id="projects">
+      <h3>Featured Projects</h3>
+      <div class="project-marquee-container">
+        <div class="project-marquee">
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/numera-favicon.png" alt="Numera icon">
+              <p class="project-title">Numera</p>
+            </div>
+            <p class="project-description">
+              A versatile calculator web app with multiple calculations, conversions, and a user-friendly interface. Calculate BMI, grade, time, age and more!
+              <br><br><a href="https://github.com/JLW-7/Numera-Calculator-Website" target="_blank">GitHub repository</a> | <a href="https://numeracalc.com/" target="_blank">Live Website</a>.
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/pi-website-favicon.png" alt="Penguin Pi icon">
+              <p class="project-title">Wally</p>
+            </div>
+            <p class="project-description">
+              An interactive voice assisstant built with ESP32 and LLM integration (e.g. Qwen, Deepseek), with a wide range of functionalities! Mass production soon!
+              <br><br><a href="https://github.com/JLW-7/wally-c" target="_blank">GitHub repository</a>
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">CodeLog (Zebra)</p>
+            </div>
+            <p class="project-description">
+              [Work in progress] Time-tracking app for developers and professionals track, reflect on, and improve how they spend their work hours — project by project.
+              <br><br><a href="https://github.com/JLW-7/CodeLog" target="_blank">GitHub repository</a> | <a href="https://zebra.pacerclub.cn" target="_blank">Demo</a>
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">Eclipsed</p>
+            </div>
+            <p class="project-description">
+              A cute 2D game where players avoid light and stay in shadows, built in Godot using GDScript. (This was intially for Hack Club's Juice Event!).
+              <br><br><a href="https://github.com/JLW-7/Eclipsed" target="_blank">GitHub repository</a> | <a href="https://store.steampowered.com/" target="_blank">Steam link</a>
+            </p>
+          </div>
+    
+          <!-- Duplicate cards for seamless looping -->
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/numera-favicon.png" alt="Numera icon">
+              <p class="project-title">Numera</p>
+            </div>
+            <p class="project-description">
+              A versatile calculator web app with multiple calculations, conversions, and a user-friendly interface. Calculate BMI, grade, time, age and more!
+              <br><br><a href="https://github.com/JLW-7/Numera-Calculator-Website" target="_blank">GitHub repository</a> | <a href="https://numeracalc.com/" target="_blank">Live Website</a>.
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/pi-website-favicon.png" alt="Penguin Pi icon">
+              <p class="project-title">Wally</p>
+            </div>
+            <p class="project-description">
+              An interactive voice assisstant built with ESP32 and LLM integration (e.g. Qwen, Deepseek), with a wide range of functionalities! Mass production soon!
+              <br><br><a href="https://github.com/JLW-7/wally-c" target="_blank">GitHub repository</a>
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">CodeLog (Zebra)</p>
+            </div>
+            <p class="project-description">
+              [Work in progress] Time-tracking app for developers and professionals track, reflect on, and improve how they spend their work hours — project by project.
+              <br><br><a href="https://github.com/JLW-7/CodeLog" target="_blank">GitHub repository</a> | <a href="https://zebra.pacerclub.cn" target="_blank">Demo</a>
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">Eclipsed</p>
+            </div>
+            <p class="project-description">
+              A cute 2D game where players avoid light and stay in shadows, built in Godot using GDScript. (This was intially for Hack Club's Juice Event!).
+              <br><br><a href="https://github.com/JLW-7/Eclipsed" target="_blank">GitHub repository</a> | <a href="https://store.steampowered.com/" target="_blank">Steam link</a>
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/numera-favicon.png" alt="Numera icon">
+              <p class="project-title">Numera</p>
+            </div>
+            <p class="project-description">
+              A versatile calculator web app with multiple calculations, conversions, and a user-friendly interface. Calculate BMI, grade, time, age and more!
+              <br><br><a href="https://github.com/JLW-7/Numera-Calculator-Website" target="_blank">GitHub repository</a> | <a href="https://numeracalc.com/" target="_blank">Live Website</a>.
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/pi-website-favicon.png" alt="Penguin Pi icon">
+              <p class="project-title">Wally</p>
+            </div>
+            <p class="project-description">
+              An interactive voice assisstant built with ESP32 and LLM integration (e.g. Qwen, Deepseek), with a wide range of functionalities! Mass production soon!
+              <br><br><a href="https://github.com/JLW-7/wally-c" target="_blank">GitHub repository</a>
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">CodeLog (Zebra)</p>
+            </div>
+            <p class="project-description">
+              [Work in progress] Time-tracking app for developers and professionals track, reflect on, and improve how they spend their work hours — project by project.
+              <br><br><a href="https://github.com/JLW-7/CodeLog" target="_blank">GitHub repository</a> | <a href="https://zebra.pacerclub.cn" target="_blank">Demo</a>
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">Eclipsed</p>
+            </div>
+            <p class="project-description">
+              A cute 2D game where players avoid light and stay in shadows, built in Godot using GDScript. (This was intially for Hack Club's Juice Event!).
+              <br><br><a href="https://github.com/JLW-7/Eclipsed" target="_blank">GitHub repository</a> | <a href="https://store.steampowered.com/" target="_blank">Steam link</a>
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/numera-favicon.png" alt="Numera icon">
+              <p class="project-title">Numera</p>
+            </div>
+            <p class="project-description">
+              A versatile calculator web app with multiple calculations, conversions, and a user-friendly interface. Calculate BMI, grade, time, age and more!
+              <br><br><a href="https://github.com/JLW-7/Numera-Calculator-Website" target="_blank">GitHub repository</a> | <a href="https://numeracalc.com/" target="_blank">Live Website</a>.
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <img src="assets/images/project-icons/pi-website-favicon.png" alt="Penguin Pi icon">
+              <p class="project-title">Wally</p>
+            </div>
+            <p class="project-description">
+              An interactive voice assisstant built with ESP32 and LLM integration (e.g. Qwen, Deepseek), with a wide range of functionalities! Mass production soon!
+              <br><br><a href="https://github.com/JLW-7/wally-c" target="_blank">GitHub repository</a>
+            </p>
+          </div>
+
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">CodeLog (Zebra)</p>
+            </div>
+            <p class="project-description">
+              [Work in progress] Time-tracking app for developers and professionals track, reflect on, and improve how they spend their work hours — project by project.
+              <br><br><a href="https://github.com/JLW-7/CodeLog" target="_blank">GitHub repository</a> | <a href="https://zebra.pacerclub.cn" target="_blank">Demo</a>
+            </p>
+          </div>
+    
+          <div class="project-card">
+            <div class="project-icon">
+              <!-- <img src="assets/images/project-icons/eclipse-icon.png" alt="Eclipsed icon"> -->
+              <p class="project-title">Eclipsed</p>
+            </div>
+            <p class="project-description">
+              A cute 2D game where players avoid light and stay in shadows, built in Godot using GDScript. (This was intially for Hack Club's Juice Event!).
+              <br><br><a href="https://github.com/JLW-7/Eclipsed" target="_blank">GitHub repository</a> | <a href="https://store.steampowered.com/" target="_blank">Steam link</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <p class="projects-note">Be sure to check out all of my projects <strong><a href="/projects/">on my projects page!</a></strong> They're awesome, I promise.</p>
+    </div>
+    
+
+    <div class="sponsor-me" id="sponsor-me">
+      <h3>Sponsor Me</h3>
+      <br>
+      <p><strong>I build and share my projects because I love what I do, but keeping them running isn’t free-servers, domains, and databases cost money. </strong>If you find my work valuable and want to support me, consider sponsoring!</p>
+      <br>
+      <br>
+      <p>Your support helps me:</p>
+      <br>
+      <p>✅ Keep open-source projects live and updated</p>
+      <p>✅ Cover hosting and infrastructure costs</p>
+      <p>✅ Spend more time building awesome things for the community</p>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h4>How You Can Support</h4>
+      <div class="how-support">
+        You can support me by 
+        <a href="https://buymeacoffee.com/julywu" target="_blank">
+          <img src="assets/images/buy-me-a-coffee.png" width="200">
+        </a>
+        or scan my Alipay QR code: 
+        <img src="assets/images/alipay-qrcode.jpg" width="150">
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <h3>julyw.com</h3>
+      <p>&copy; 2025 julyw.com. CC-BY-SA license. All Rights Reserved. <a href="https://github.com/JLW-7/PORTFOLIO-julyw.com" target="_blank">Open Source</a></p>
+    </footer>
+    
+
+<script src="script.js"></script>
 </body>
 </html>
+
