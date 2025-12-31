@@ -327,8 +327,8 @@ nav a:hover {
 
 .about-me img{
   max-width: 80%; 
-  height: auto; 
-  border-radius: 15px;
+  /* height: auto;  */
+  border-radius: 20px;
   margin-right: 100px;
   animation: swing 1.5s infinite; 
 }
